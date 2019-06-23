@@ -18,7 +18,8 @@ Plugin 'dracula/vim'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 " All of your Plugins must be added before the following line
-Plugin 'xuhdev/vim-latex-live-preview'
+Plugin 'lervag/vimtex'
+"Plugin 'xuhdev/vim-latex-live-preview'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " Brief help
@@ -42,8 +43,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = { 'passive_filetypes': ['tex'] }
 :inoremap jj <Esc>
-let g:syntastic_tex_checkers=['chktex']
 augroup debianlatexfix
   " Remove all vimrc autocommands within scope
   autocmd!
