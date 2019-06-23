@@ -43,3 +43,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 :inoremap jj <Esc>
+let g:syntastic_tex_checkers=['chktex']
+augroup debianlatexfix
+  " Remove all vimrc autocommands within scope
+  autocmd!
+  autocmd BufNewFile,BufRead *.tex   set syntax=tex
+  autocmd BufNewFile,BufRead *.cls   set syntax=tex
+augroup END
